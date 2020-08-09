@@ -1,0 +1,105 @@
+body {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(51, 51, 51);
+    color: white;
+}
+
+#buttons {
+    margin-bottom: 50px;
+}
+
+#new_event_create {
+    border: whitesmoke 1px solid;
+    min-width: 300px;
+    min-height: 300px;
+    max-width: 300px;
+    max-height: 300px;
+    flex-direction: column;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: none;
+}
+
+.text_area {
+    padding-bottom: 20px;
+     width: 300px;
+     height: 40px;
+     flex-direction: column;
+     font-size: inherit;
+     font-family: inherit;
+     padding-bottom: 10px;
+     resize: none;
+}
+
+#class_box {
+    border: whitesmoke 1px solid;
+    width: 300px;
+    height: 200px;
+    flex-direction: column;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: none;
+}
+
+#submit_event_info {
+    width: 50px;
+    height: 30px;
+}
+
+.week {
+    display: flex;
+    flex-direction: row;
+}
+
+#day_blocks {
+    padding-left: 30px;
+}
+
+.day {
+    padding: 5px;
+    display: block;
+    flex-direction: row;
+    min-width: 100px;
+    max-width: 100px;
+    min-height: 100px;
+    max-height: 100px;
+    border: whitesmoke 1px solid;
+    text-align: left;
+}
+
+#calender_title {
+    margin-right: 50px;
+}
+
+#calender_info {
+    display: flex;
+    flex-direction: row;
+}
+
+#day_display {
+    display: flex;
+    flex-direction: column;
+    border: whitesmoke 1px solid;
+    max-width: 200px;
+    min-width: 200px;
+    max-height: 560px;
+    min-height: 560px;
+    margin-left: 50px;
+}
+
+#title {
+    font-size: 35px;
+    text-align: center;
+}
+
+#day_display #new_event {
+    position: absolute;
+    bottom: 3px;
+    min-width: 25px;
+    min-height: 25px;
+}
