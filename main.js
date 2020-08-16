@@ -4,53 +4,56 @@ var title = document.getElementById("calender_title");
 
 function draw_calender() {      //Creates the table for days in month
   
+    console.log("Draw_calender function")
     var count = 1;
-  var calender = document.getElementById("days_frame");
+    var calender = document.getElementById("days_frame");
 
-  for (let i = 0; i < 6; i++) {
-      var row = document.createElement("div");
-      row.className = "week";
-      calender.appendChild(row);
-    for (let j = 0; j < 7; j++) {
-      var column = document.createElement("div");
-      column.className = "day";
-      row.appendChild(column);
-      column.id = count;
-      column.style.visibility = "hidden";
-      count += 1;
-      row.appendChild(column);
+    for (let i = 0; i < 6; i++) {
+        var row = document.createElement("div");
+        row.className = "week";
+        calender.appendChild(row);
+        for (let j = 0; j < 7; j++) {
+            var column = document.createElement("div");
+            column.className = "day";
+            row.appendChild(column);
+            column.id = count;
+            column.style.visibility = "hidden";
+            count += 1;
+            row.appendChild(column);
+        }
     }
-  }
 }
 
 async function display_current_month() {    //Displays current month when opening calendar
 
-  var month_info = await eel.month_info_py(0)();
-  var first_day = month_info[0];
-  var days_in_month = month_info[1];
+    console.log("Display_current_month function")
+    var month_info = await eel.month_info_py(0)();
+    var first_day = month_info[0];
+    var days_in_month = month_info[1];
 
-  title.innerHTML = "";
-  title.innerHTML = ("Current month: "+month_info[2]+"."+month_info[3]);
+    title.innerHTML = "";
+    title.innerHTML = ("Current month: "+month_info[2]+"."+month_info[3]);
 
-  update_dayinfo(month_info[4]);
+    update_dayinfo(month_info[4]);
 
-  for (let i = first_day; i <= days_in_month+first_day; i++) {
-    list_days.push(i.toString());
-  }
+    for (let i = first_day; i <= days_in_month+first_day; i++) {
+        list_days.push(i.toString());
+    }
 
-  var counter = 0;
-  for (let j = first_day; j < 40; j++) {
-    counter += 1;  
-    var block = document.getElementsByClassName("day")[j];
-    if (block.id === list_days[counter]) {
-      block.style.visibility = "visible";
-      block.innerHTML = counter;
-      }
-  } 
+    var counter = 0;
+    for (let j = first_day; j < 40; j++) {
+        counter += 1;  
+        var block = document.getElementsByClassName("day")[j];
+        if (block.id === list_days[counter]) {
+        block.style.visibility = "visible";
+        block.innerHTML = counter;
+        }
+    } 
 }
 
 async function month_move(direction) {    //Function to move from current month to next or previous
 
+    console.log("month_move function")
     if (direction == 1) {
         var month_info = await eel.month_info_py(1)();
     }
@@ -177,17 +180,26 @@ function hide_class_creation() {
     }
 }
 
-function main() {
+// function main() {
 
-    while(true) {
-        draw_calender();
-        display_current_month();
-        render_dayinfo();
-        tile_click();
-        document.getElementById("prev").onclick = function() {month_move(-1)};
-        document.getElementById("next").onclick = function() {month_move(1)};
-        document.getElementById("new_event").onclick = function() {hide_event_creation()};
-    }
-}
+//     while(true) {
+        
+//         draw_calender();
+//         // display_current_month();
+//         // render_dayinfo();
+//         // tile_click();
+//         // document.getElementById("prev").onclick = function() {month_move(-1)};
+//         // document.getElementById("next").onclick = function() {month_move(1)};
+//         // document.getElementById("new_event").onclick = function() {hide_event_creation()};
+//     }
+// }
 
-main();
+// main();
+
+draw_calender();
+display_current_month();
+render_dayinfo();
+tile_click();
+document.getElementById("prev").onclick = function() {month_move(-1)};
+document.getElementById("next").onclick = function() {month_move(1)};
+document.getElementById("new_event").onclick = function() {hide_event_creation()};
