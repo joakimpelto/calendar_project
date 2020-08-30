@@ -9,6 +9,14 @@ body {
     margin-bottom: 50px;
 }
 
+.toolbar {
+    flex-direction: column;
+    width: 100;
+    height: 50;
+    position: absolute;
+    margin: auto;
+}
+
 #new_event_create {
     border: whitesmoke 1px solid;
     min-width: 300px;
@@ -34,7 +42,7 @@ body {
      resize: none;
 }
 
-#class_box {
+#project_box {
     border: whitesmoke 1px solid;
     width: 300px;
     height: 200px;

@@ -9,9 +9,18 @@
         <button class="toolbar_button" id="prev">Prev</button>
         <button class="toolbar_button" id="next">Next</button>
         <button class="toolbar_button" id="new_event">New Event</button>
-        <button class="toolbar_button" id="submite_event_info">Submit</button>
-        <button class="toolbar_button" id="create_new_class">New Class</button>
-        <button class="toolbar_button" id="submit_new_class">Submit</button>
+        <button class="toolbar_button" id="create_new_project">New Project</button>
+        <div id="project_box">
+          <textarea class="text_area" id="class_name" maxlength="20" placeholder="Class name"></textarea>
+          <textarea class="text_area"  id="class_color_tag" maxlength="20" placeholder="Color tag"></textarea>
+          <button id="submit_new_project">Add</button>
+        </div> 
+        <div id="new_event_create">
+          <textarea type="text" rows="1" maxlength="25" placeholder="Title" class="text_area" id="event_title"></textarea>
+          <textarea type="text" rows="1" maxlength="25" placeholder="Date and time (format dd:mm:yy;h:m)" class="text_area" id="event_days"></textarea>
+          <textarea type="text" rows="1" maxlength="25" placeholder="End date and time (format dd:mm:yy;h:m)" class="text_area" id="deadline_day"></textarea>
+          <textarea type="text" rows="1" maxlength="25" placeholder="Repetition 0;1;2;3 jne" class="text_area" id="repetition"></textarea>
+          <button id="submit_event_info">Add</button>
       </div>
       <div id="main_calender">
         <div id="calender_title"></div>

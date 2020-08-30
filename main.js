@@ -148,7 +148,7 @@ function add_event() {
     var new_event_title = document.getElementById("event_title").value.toString();
     var new_event_date = document.getElementById("event_days").value.toString();
     var new_event_deadline = document.getElementById("deadline_day").value.toString();
-    var new_event_class = document.getElementById("class").value.toString();
+    var new_event_class = document.getElementById("repetition").value.toString();
     console.log(new_event_title, new_event_date, new_event_deadline, new_event_class);
 
     var event_block = document.getElementById("new_event_create");
@@ -170,7 +170,7 @@ function hide_event_creation() {
 
 function hide_class_creation() {
         
-    var event_block = document.getElementById("class_box");
+    var event_block = document.getElementById("project_box");
 
     if (event_block.style.display == "none")  {
         event_block.style.display = "block";
@@ -180,21 +180,7 @@ function hide_class_creation() {
     }
 }
 
-// function main() {
 
-//     while(true) {
-        
-//         draw_calender();
-//         // display_current_month();
-//         // render_dayinfo();
-//         // tile_click();
-//         // document.getElementById("prev").onclick = function() {month_move(-1)};
-//         // document.getElementById("next").onclick = function() {month_move(1)};
-//         // document.getElementById("new_event").onclick = function() {hide_event_creation()};
-//     }
-// }
-
-// main();
 
 draw_calender();
 display_current_month();
@@ -203,3 +189,5 @@ tile_click();
 document.getElementById("prev").onclick = function() {month_move(-1)};
 document.getElementById("next").onclick = function() {month_move(1)};
 document.getElementById("new_event").onclick = function() {hide_event_creation()};
+document.getElementById("submit_event_info").onclick = function() {add_event()};
+document.getElementById("create_new_project").onclick = function() {hide_class_creation()};
